@@ -8,7 +8,12 @@
 	   Robin MainModule
 
 
+This module is stored in cloud and is used for
+managing the core functions of robin.
+Required Things:
 
+ROBIN_SETUP (Anything)
+	Host (InstanceValue) -- MUST
 
 
 
@@ -83,6 +88,33 @@ function r.update()
 		robins[i].HostTimer = game.Workspace.DistributedGameTime - hosttime
 		end
 	end
+	
+function r.findpro(queue,object)
+	local ret = false
+		for 1 = 1, #queue do
+			if object == queue[i] then
+				ret = true
+				end
+			end
+		return ret
+		end
+
+function replacequeue(newqueue)
+	q = core:getqueue()
+	for i = 1, #q do
+		core.remove(q[i]
+	
+function r.scan()
+	q = core:getqueue()
+	local scanned = {}
+		for i = 1, #queue do
+			if r.findpro(scanned,q[i]) then
+				else
+				table.add(scanned,#scanned + 1,q[i]
+					end
+				end
+			
+				
 	
 	return r
 

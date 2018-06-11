@@ -42,6 +42,15 @@ function setup()
 	end
 setup()
 
+local newrobin = rs:waitforchild("newRobin")
+local plrinqueue = rs:waitforchild("plrInQueue")
+
+function plrinqueue(plr)
+	local new = core.find(plr,"bool")
+	local newsecond = core.find(plr,"number")
+	plrinqueue:FireClient(plr,new,newsecond)
+	end
+plrinqueue.OnServerEvent:connect(plrinqueue)
 
 
 function r.newrobin(robin)
@@ -74,6 +83,7 @@ function r.getrobins() -- HIGHLY SUGGESTED to run **SERVER SIDE**, may crash cli
 		end
 	print("ROBIN SCAN FINISHED.")
 	end
+	end
 
 function r.update()
 	q = core:getqueue()
@@ -102,7 +112,13 @@ function r.findpro(queue,object)
 function replacequeue(newqueue)
 	q = core:getqueue()
 	for i = 1, #q do
-		core.remove(q[i]
+		core.remove(q[i])
+		end
+	for i = 1, #newqueue do
+		core.add(newqueue[i])
+		end
+	end
+	
 	
 function r.scan()
 	q = core:getqueue()
@@ -113,6 +129,14 @@ function r.scan()
 				table.add(scanned,#scanned + 1,q[i]
 					end
 				end
+			replacequeue(scanned)
+			end
+
+function r.renderstep()
+	r.scan()
+	r.update()
+	r.getrobins()
+	end
 			
 				
 	

@@ -1,4 +1,22 @@
+--[[
 
+
+		ROBIN
+
+	/////////////////////
+	
+	   Robin MainModule
+
+
+
+
+
+
+
+
+
+
+]]
 
 local q = {}
 local robins = {}
@@ -10,6 +28,9 @@ function setup()
 	local newrobin = Instance.new("RemoteFunction")
 	newrobin.Name = "newRobin"
 	newrobin.Parent = rs
+	local plrinqueue = Instance.new("RemoteFunction")
+	plrinqueue.Name = "plrInQueue"
+	plrinqueue.Parent = rs
 	end
 
 function getrobins() -- HIGHLY SUGGESTED to run **SERVER SIDE**, may crash clients **IF IN WORKSPACE**

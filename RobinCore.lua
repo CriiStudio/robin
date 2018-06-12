@@ -13,7 +13,7 @@ managing the core functions of robin.
 Required Things:
 
 ROBIN_SETUP (Anything)
-	Host (InstanceValue) -- MUST
+	Host (InstanceValue) -- MUST BE AN INSTANCE WITH A "TEXT" PROPERTY!!
 
 
 
